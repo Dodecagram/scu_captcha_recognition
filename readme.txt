@@ -1,4 +1,4 @@
-# scu_captcha_recognition
+# scu_captcha_recognition(四川大学 教务处 验证码识别)
 
 Usage: import js file, and do like this: getCaptcha(img).then(res=>console.log(getLabels(res))). 
 Docstring: Recognize the captcha of scu. 
