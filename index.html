@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>四川大学教务处验证码识别</title>
+    <mate charset="utf-8">
+  </head>
+  <body>
+    <header><h1>四川大学教务处验证码识别</h1></header>
+    <main>
+      <article>
+        <header><h2>用法</h2></header>
+        <p>说明: 纯js, 单个字母准确率在90%以上，但由于分割算法不太好，整体的识别率大概有50%，用于登录等已经足够。</p>
+        <p>下载: <a href="code/recognition.min.js">recognition.min.js</a></p>
+        <p>用法: <ul><li>getCaptcha(?img).then(res=>getLabels(res)).then({yourcode})</li><li>params: img, Image Obeject, 可选。默认重新获得验证码并识别。</li></ul></p>
+      <p>举例: <ul>
+      <li>登录(书签): <code><pre>javascript:
+function login_without_captcha(c){
+	if(c > 20){
+		alert('fail to recognize!');
+	}else{
+		c++;
+		getCaptcha().then(res=>getLabels(res)).then(res=>{
+			var xhr = new XMLHttpRequest();
+			xhr.open('post','/j_spring_security_check');
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			xhr.send('j_username='+ usr +'&j_password='+ pwd +'&j_captcha='+ res);
+			xhr.onload=function(){
+				if(/badCaptcha/.test(xhr.responseURL)){
+					login_without_captcha(c);
+				}else{
+					window.location.href=xhr.responseURL;
+				}
+			}
+		});
+	}
+};
+var usr = document.getElementById('input_username').value;
+var pwd = document.getElementById('input_password').value;
+var s = document.createElement('script');
+s.src='http://scu.edu.pl/scu_captcha_recognition/download/recognition.min.js';
+document.body.appendChild(s);
+s.onload=function(){
+	document.getElementById('captchaImg').style='display:none';
+	document.getElementById('input_checkcode').style='display:none';
+	document.getElementById('loginButton').onclick =function(e){
+		e.preventDefault();
+		login_without_captcha(0);
+	};
+};
+void 0;
+</pre></code></li>
+      </ul></p>
+      </article>
+    </main>
+    </footer></footer>
+  </body>
+</html>
