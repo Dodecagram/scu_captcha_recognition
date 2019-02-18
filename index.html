@@ -13,7 +13,7 @@
         <p>下载: <a href="download/recognition.min.js">recognition.min.js</a></p>
         <p>用法: <ul><li>getCaptcha(?img).then(res=>getLabels(res)).then({yourcode})</li><li>params: img, Image Obeject, 可选。默认重新获得验证码并识别。</li></ul></p>
       <p>举例: <ul>
-      <li>登录(书签): <code><pre>javascript:
+      <li>登录书签(由于js文件较大，可下载使用，请自行修改): <code><pre>javascript:
 function login_without_captcha(c){
 	if(c > 20){
 		alert('fail to recognize!');
