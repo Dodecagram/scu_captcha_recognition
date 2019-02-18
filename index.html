@@ -19,6 +19,8 @@ function login_without_captcha(c){
 		alert('fail to recognize!');
 	}else{
 		c++;
+		var usr = document.getElementById('input_username').value;
+		var pwd = document.getElementById('input_password').value;
 		getCaptcha().then(res=>getLabels(res)).then(res=>{
 			var xhr = new XMLHttpRequest();
 			xhr.open('post','/j_spring_security_check');
@@ -34,8 +36,6 @@ function login_without_captcha(c){
 		});
 	}
 };
-var usr = document.getElementById('input_username').value;
-var pwd = document.getElementById('input_password').value;
 var s = document.createElement('script');
 s.src='http://scu.edu.pl/scu_captcha_recognition/download/recognition.min.js';
 document.body.appendChild(s);
