@@ -1,7 +1,7 @@
 # 四川大学本科教务系统验证码识别
-具体使用详见[gitpage](http://scu.edu.pl/scu_captcha_recognition/). 
+具体使用详见[GitPage](http://scu.edu.pl/scu_captcha_recognition/). 
 
-下载: <http://scu.edu.pl/scu_captcha_recognition/download/recognition.min.js>
+下载: [recognition.min.js](http://scu.edu.pl/scu_captcha_recognition/download/recognition.min.js)
 
 应用实例: 
 
