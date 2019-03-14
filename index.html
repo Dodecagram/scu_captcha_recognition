@@ -9,7 +9,7 @@
     <main>
       <article>
         <header><h2>用法</h2></header>
-        <p>说明: 纯js, 单个字母准确率在90%以上，但由于分割算法不太好，整体的识别率大概有50%，用于登录等已经足够。</p>
+        <p>说明: 纯js, 单个字母准确率在90%以上，但由于分割算法不太好，使用1000个样本测试，准确率只有60%，用于登录等已经足够。</p>
         <p>下载: <a href="download/recognition.min.js">recognition.min.js</a></p>
         <p>用法: <ul><li>getCaptcha(?img).then(res=>getLabels(res)).then({yourcode})</li><li>params: img, Image Obeject, 可选。默认重新获得验证码并识别。</li></ul></p>
       <p>举例: <ul>
