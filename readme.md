@@ -1,5 +1,5 @@
 # 四川大学本科教务系统验证码识别
-具体使用详见[GitPage](http://scu.edu.pl/scu_captcha_recognition/). 
+具体使用详见[GitPage](https://scu.edu.pl/scu_captcha_recognition/). 
 
 使用1000个样本测试，准确率有60%，由于输错验证码不会导致账号被锁定，故可作登录用途。
 
